@@ -33,7 +33,7 @@ class SparkServiceProvider extends ServiceProvider
      * @var array
      */
     protected $developers = [
-        //
+        'uriahg17@gmail.com'
     ];
 
     /**
@@ -57,10 +57,20 @@ class SparkServiceProvider extends ServiceProvider
                 'First', 'Second', 'Third'
             ]);
 
-        Spark::teamPlan('Basic', 'provider-id-1')
+        Spark::teamPlan('BASIC PLAN', 'spark_test_1')
             ->price(10)
             ->features([
                 'First', 'Second', 'Third'
             ]);
+	Spark::teamPlan('PRO PLAN', 'spark_test_2')
+	    ->price(30)
+	    ->features([
+		'First', 'Second', 'Third'
+	    ]);
+	Spark::teamPlan('VIP PLAN', 'spark_test_3')
+	    ->price(60)
+	    ->features([
+		'First', 'Second', 'Third'
+	    ]);
     }
 }
