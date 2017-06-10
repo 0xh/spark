@@ -63,6 +63,10 @@ class EventServiceProvider extends ServiceProvider
         'Laravel\Spark\Events\Teams\UserInvitedToTeam' => [
             'Laravel\Spark\Listeners\Teams\CreateInvitationNotification',
         ],
+
+        // Event For Login and Logout
+        'Illuminate\Auth\Events\Login' => ['App\Listeners\UserLoggedIn'],
+        'Illuminate\Auth\Events\Logout' => ['App\Listeners\UserLoggedOut'],
     ];
 
     /**

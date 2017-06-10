@@ -14,3 +14,16 @@
 Route::get('/', 'WelcomeController@show');
 
 Route::get('/home', 'HomeController@show');
+
+Route::group(['middleware' => 'auth'], function(){
+
+	Route::get('admin/{all}','AdminController@implicitRoute')->where('all','.*');
+	Route::resource('admin','AdminController');
+
+	Route::get('user/{all}','UserController@implicitRoute')->where('all','.*');
+	Route::resource('user','UserController');
+
+
+	Route::get('can','TestController@testcan');
+
+});
