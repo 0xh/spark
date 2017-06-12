@@ -50,17 +50,27 @@
 <!-- Body Contents -->
 <body>
     <div id="app">
-        @include('nav')
+        @section('navbar')
+        @include('partials.navbar')
+
+        <!--To Append Anything To Your Child Template You Can Do This-->
+
+        <!--@section('navbar') @parent
+        <p>This is appended to the master navbar.</p>
+        @endsection-->
+
+        @show
 
         <!--We Should Only Show this Section If There is an Auth user-->
         @section('sidebar')
-
+        <!--This Has Our Main Sidebar template-->
+        @include('partials.sidebar')
         <!--To Append Anything To Your Child Template You Can Do This-->
 
         <!--@section('sidebar') @parent
         <p>This is appended to the master sidebar.</p>
         @endsection-->
-        
+
         @show
 
         @yield('content')

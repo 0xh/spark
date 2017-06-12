@@ -16,6 +16,7 @@ class ComposerServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->composeLatestNotification();
+        $this->composeLogin();
         
     }
 
@@ -39,5 +40,19 @@ class ComposerServiceProvider extends ServiceProvider
         $view->with(compact('notification'));
         });
 
+    }
+
+    private function composeLogin()
+    {
+        view()->composer('spark::auth.login', function($view)
+        {
+        $dir = scandir(base_path('public/images/lock/landscape'));
+        foreach ($dir as $key => $value) {
+            if(preg_match('/^\.+$/',$value)) {unset($dir[$key]);continue;}
+            $tdir[] = $dir[$key];
+        }
+        $lock_images = $tdir;
+        $view->with(compact('lock_images'));
+        });
     }
 }

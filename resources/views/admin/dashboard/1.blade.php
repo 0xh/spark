@@ -7,33 +7,6 @@
 </div>
 <div class="section-wrapper ">
 	<div class="grid">
-		<!-- parent column -->
-		<div class="row cells3 nestable">
-			<div class="cell"> Parent</div>
-
-			<div class="cell colspan2">
-
-				<!-- child column -->
-				<div class="row cells12 nested">
-					<div class="cell"> test </div>
-					<div class="cell"> test2 </div>
-					<div class="cell"> test3 </div>
-					<div class="cell"> test4 </div>
-					<div class="cell"> test5 </div>
-					<div class="cell"> test6 </div>
-					<div class="cell"> test7 </div>
-					<div class="cell"> test8 </div>
-					<div class="cell"> test9 </div>
-					<div class="cell"> test10 </div>
-					<div class="cell"> test11 </div>
-					<div class="cell"> test12 </div>
-				</div>
-
-			</div>
-
-		</div>
-	</div>
-	<div class="grid">
 		<div class="row fg-white cells4	">
 			<div class="cell ">
 				<div class="bg-cobalt widget-info animated fadeInLeftBig">
@@ -274,44 +247,7 @@
 
 		</div>
 
-		<div class="row cells">
-			
-			<div class="cell ">
-
-				<div class="panel widget-box " data-role="panel" >
-					<div class="heading">
-						<div class="title">Rich text editor</div>
-					</div>
-					<div class="content">
-						<div class="sub-heading">
-							Send your message here
-						</div>
-						<div class="text">
-							
-							<div class="summernote">
-								<h3>Lorem Ipsum is simply</h3>
-		                            Lorem ipsum dolor sit amet. <strong>Lorem ipsum dolor sit amet, consectetur adipisicing.</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia quaerat tempora, fugit odit, temporibus corporis.
-		                            <br/>
-	                            	Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci in sequi est quam ipsam eveniet labore quidem ipsa beatae asperiores optio at, architecto dicta, excepturi recusandae impedit aperiam, ad maxime!
-		                            <br/>
-		                            <ul>
-		                                <li>Remaining essentially unchanged</li>
-		                                <li>Make a type specimen book</li>
-		                                <li>Unknown printer</li>
-		                            </ul>										
-							</div>
-							<hr class="divider">
-							<div class="align-center">
-								<button class="button primary ">Post</button>
-							</div>
-
-						</div>
-					</div>
-				</div>
-
-			</div>
-
-		</div>
+		
 
 	</div>
 </div>
