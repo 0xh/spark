@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8acf52a18626849b80762070c1c1a9b2",
+    "content-hash": "af9f1477064f538304becb34b10fe321",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2677,6 +2677,68 @@
                 "environment"
             ],
             "time": "2016-09-01T10:05:43+00:00"
+        },
+        {
+            "name": "zinethq/spark-roles",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ZiNETHQ/spark-roles.git",
+                "reference": "6bd8731407356c13fbaa0792bef43fb2ade7cb9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ZiNETHQ/spark-roles/zipball/6bd8731407356c13fbaa0792bef43fb2ade7cb9e",
+                "reference": "6bd8731407356c13fbaa0792bef43fb2ade7cb9e",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "^5.3",
+                "php": ">=5.6.4"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~5.5"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "ZiNETHQ\\SparkRoles\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jon Nicholson",
+                    "email": "jon.nicholson@zinethq.com",
+                    "homepage": "http://www.zinethq.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Roles and permissions for teams and users in Laravel Spark, based on caffeinated/shinobi",
+            "keywords": [
+                "auth",
+                "caffeinated",
+                "laravel",
+                "permissions",
+                "roles",
+                "shinobi",
+                "spark",
+                "team",
+                "user",
+                "zinethq"
+            ],
+            "support": {
+                "source": "https://github.com/ZiNETHQ/spark-roles/tree/master",
+                "issues": "https://github.com/ZiNETHQ/spark-roles/issues"
+            },
+            "time": "2017-05-22T12:53:43+00:00"
         }
     ],
     "packages-dev": [
@@ -4155,7 +4217,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "laravel/spark": 20
+        "laravel/spark": 20,
+        "zinethq/spark-roles": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,

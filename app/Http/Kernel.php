@@ -31,6 +31,8 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \Laravel\Spark\Http\Middleware\CreateFreshApiToken::class,
+            // Allows You Dynamically Set Developers Using Roles Models and Database
+            \ZiNETHQ\SparkRoles\Middleware\AddDevelopers::class,
         ],
 
         'api' => [

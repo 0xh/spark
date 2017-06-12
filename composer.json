@@ -14,7 +14,8 @@
         "laravel/cashier": "~7.0",
         "laravel/spark": "*@dev",
         "laravelcollective/html": "^5.4",
-        "hashids/hashids": "^2.0"
+        "hashids/hashids": "^2.0",
+        "zinethq/spark-roles": "dev-master"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
@@ -61,6 +62,10 @@
         {
             "type": "path",
             "url": "./spark"
+        },
+        {
+            "type": "vcs",
+            "url": "git@github.com:ZiNETHQ/spark-roles.git"
         }
     ]
 }

@@ -170,6 +170,7 @@ return [
         Scriptunited\Metroskin\MetroskinServiceProvider::class,
         Scriptunited\Usermanager\UsermanagerServiceProvider::class,
         Collective\Html\HtmlServiceProvider::class,
+        ZiNETHQ\SparkRoles\SparkRolesServiceProvider::class,
 
 
         /*

@@ -4,10 +4,16 @@ namespace App;
 
 use Laravel\Spark\CanJoinTeams;
 use Laravel\Spark\User as SparkUser;
+use ZiNETHQ\SparkRoles\Traits\CanHaveRoles;
 
 class User extends SparkUser
 {
-    use CanJoinTeams;
+    use CanJoinTeams ,CanHaveRoles;
+
+    // Every user can have zero or more roles.
+    // Every user can have zero or more permissions.
+    // Roles and permissions can be shared between users and teams.
+    // Optionally, users and teams with a certain role (e.g. developer) are added to the Spark developer's array.
 
     /**
      * The attributes that are mass assignable.
