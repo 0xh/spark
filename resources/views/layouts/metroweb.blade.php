@@ -9,7 +9,7 @@
     <meta name="keywords" content="HTML, CSS, JS, Laravel, JavaScript, framework, metro, front-end, frontend, web development">
     <meta name="author" content="Metro Dashboard contributor">
 
-    <title>Metro UI Skin Demo Page</title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
     <link href="{{ asset('metro/css/metro.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('metro/css/metro-icons.css') }}" rel="stylesheet" type="text/css" />
     <link href="{{ asset('metro/css/metro-responsive.css') }}" rel="stylesheet" type="text/css" />
