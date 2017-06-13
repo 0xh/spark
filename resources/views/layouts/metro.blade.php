@@ -53,7 +53,7 @@
 
 <body onload="" class="{{ $appcolor or 'bg-steel' }} " dir="">
     @include( 'layouts/header')
-    <div class="page-container metro  ">
+    <div class="page-container metro ">
         <div class="row flex" style="height:100%">
             <div class="cell sidebar-cell" style="height:100%;">
                 @include( 'layouts/sidebar' )

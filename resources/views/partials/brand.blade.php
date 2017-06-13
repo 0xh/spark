@@ -3,4 +3,3 @@
     {!! config('nav.brand.logo') !!}<span>|</span>
     {{ config('nav.brand.title') }}
 </a>
-

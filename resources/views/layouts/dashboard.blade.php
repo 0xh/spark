@@ -30,8 +30,7 @@
 </head>
 
 <!-- Body Contents -->
-<body onload="" class="" style="background: #f0f0f2 url(./images/lock/landscape/86a053d7e8fd3c8efeb13ddf1057cc3a31cad70b6724793854ddbc9b8bea0c6a.jpg) center center no-repeat;">
-<!--<body class="bg-white">-->
+<body>
         <!-- Top NavBar -->
         @if (Auth::check())
         @include('partials.navbar.user') 
@@ -39,7 +38,11 @@
         @else
         @include('partials.navbar.guest') 
         @endif
+        <div class="page-container op-black">
+            <div class="" style="height:100%;">
             @yield('content')
+            </div>
+        </div>
     @include( 'partials.footer')
     <!-- Scripts -->
     <!--<script src="{{ asset('js/app.js') }}"></script>-->

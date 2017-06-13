@@ -1,3 +1,4 @@
+<!-- EDIT AUTH NAV -->
 <!-- NavBar For Authenticated Users -->
 <spark-navbar
     :user="user"

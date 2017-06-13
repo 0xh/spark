@@ -29,10 +29,10 @@ class ComposerServiceProvider extends ServiceProvider
     {
         //
     }
-
+    // Allow Notification in All View!
     private function composeLatestNotification()
     {
-        view()->composer('layouts.header', function($view)
+        view()->composer('*', function($view)
         {
         $notification = new Notification();
         $notification = $notification->recent(auth()->user())->first();
@@ -44,7 +44,7 @@ class ComposerServiceProvider extends ServiceProvider
 
     private function composeLogin()
     {
-        view()->composer('spark::auth.login', function($view)
+        view()->composer(['spark::auth.login', 'spark::auth.register'], function($view)
         {
         $dir = scandir(base_path('public/images/lock/landscape'));
         foreach ($dir as $key => $value) {
