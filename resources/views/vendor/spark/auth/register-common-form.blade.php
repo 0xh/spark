@@ -1,119 +1,115 @@
-<form class="form-horizontal" role="form">
-    @if (Spark::usesTeams() && Spark::onlyTeamPlans())
-        <!-- Team Name -->
-        <div class="form-group" :class="{'has-error': registerForm.errors.has('team')}" v-if=" ! invitation">
-            <label class="col-md-4 control-label">{{ ucfirst(Spark::teamString()) }} Name</label>
-
-            <div class="col-md-6">
-                <input type="name" class="form-control" name="team" v-model="registerForm.team" autofocus>
-
-                <span class="help-block" v-show="registerForm.errors.has('team')">
-                    @{{ registerForm.errors.get('team') }}
-                </span>
-            </div>
-        </div>
-
-        @if (Spark::teamsIdentifiedByPath())
-            <!-- Team Slug (Only Shown When Using Paths For Teams) -->
-            <div class="form-group" :class="{'has-error': registerForm.errors.has('team_slug')}" v-if=" ! invitation">
-                <label class="col-md-4 control-label">{{ ucfirst(Spark::teamString()) }} Slug</label>
-
-                <div class="col-md-6">
-                    <input type="name" class="form-control" name="team_slug" v-model="registerForm.team_slug" autofocus>
-
-                    <p class="help-block" v-show=" ! registerForm.errors.has('team_slug')">
-                        This slug is used to identify your team in URLs.
-                    </p>
-
-                    <span class="help-block" v-show="registerForm.errors.has('team_slug')">
-                        @{{ registerForm.errors.get('team_slug') }}
-                    </span>
-                </div>
-            </div>
-        @endif
-    @endif
-
-    <!-- Name -->
-    <div class="form-group" :class="{'has-error': registerForm.errors.has('name')}">
-        <label class="col-md-4 control-label">Name</label>
-
-        <div class="col-md-6">
-            <input type="name" class="form-control" name="name" v-model="registerForm.name" autofocus>
-
-            <span class="help-block" v-show="registerForm.errors.has('name')">
-                @{{ registerForm.errors.get('name') }}
-            </span>
-        </div>
+<!-- login form -->
+<form role="form">
+    <h3 class="text-light">Register An Account</h3>
+    <hr class="thin" />
+    <br /> @if (Spark::usesTeams() && Spark::onlyTeamPlans())
+    <div class="input-control text full-size" :class="{'error': registerForm.errors.has('team')}" v-if=" ! invitation" data-role="input">
+        <label for="team">{{ ucfirst(Spark::teamString()) }} Name</label>
+        <input type="text" name="team" id="team" v-model="registerForm.team" autofocus>
+        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+        <span class="fg-red" v-show="registerForm.errors.has('team')">
+                            @{{ registerForm.errors.get('team') }}
+                            </span>
     </div>
 
-    <!-- E-Mail Address -->
-    <div class="form-group" :class="{'has-error': registerForm.errors.has('email')}">
-        <label class="col-md-4 control-label">E-Mail Address</label>
+    @if (Spark::teamsIdentifiedByPath())
+    <br />
+    <br />
+    <br />
+    <div class="input-control text full-size" :class="{'error': registerForm.errors.has('team_slug')}" data-role="input" v-if=" ! invitation">
 
-        <div class="col-md-6">
-            <input type="email" class="form-control" name="email" v-model="registerForm.email">
-
-            <span class="help-block" v-show="registerForm.errors.has('email')">
-                @{{ registerForm.errors.get('email') }}
-            </span>
-        </div>
+        <label for="team_slug">{{ ucfirst(Spark::teamString()) }} Slug</label>
+        <input type="text" name="team_slug" id="team_slug" v-model="registerForm.team_slug" autofocus>
+        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+        <span class="fg-red" v-show="registerForm.errors.has('team_slug')">
+                            @{{ registerForm.errors.get('team_slug') }}
+                            </span>
     </div>
+    <p class="fg-blue" v-show=" ! registerForm.errors.has('team_slug')">
+        Note: This slug is used to identify your team in URLs.
+    </p>
 
-    <!-- Password -->
-    <div class="form-group" :class="{'has-error': registerForm.errors.has('password')}">
-        <label class="col-md-4 control-label">Password</label>
+    @endif @endif
+    <br />
+    <br />
+    <br />
 
-        <div class="col-md-6">
-            <input type="password" class="form-control" name="password" v-model="registerForm.password">
-
-            <span class="help-block" v-show="registerForm.errors.has('password')">
-                @{{ registerForm.errors.get('password') }}
-            </span>
-        </div>
+    <div class="input-control text full-size" :class="{'error': registerForm.errors.has('name')}" data-role="input">
+        <label for="full_name">Full Name</label>
+        <input type="text" name="name" id="full_name" v-model="registerForm.name" autofocus>
+        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+        <span class="fg-red" v-show="registerForm.errors.has('name')">
+                            @{{ registerForm.errors.get('name') }}
+                            </span>
     </div>
-
-    <!-- Password Confirmation -->
-    <div class="form-group" :class="{'has-error': registerForm.errors.has('password_confirmation')}">
-        <label class="col-md-4 control-label">Confirm Password</label>
-
-        <div class="col-md-6">
-            <input type="password" class="form-control" name="password_confirmation" v-model="registerForm.password_confirmation">
-
-            <span class="help-block" v-show="registerForm.errors.has('password_confirmation')">
-                @{{ registerForm.errors.get('password_confirmation') }}
-            </span>
-        </div>
+    <br />
+    <br />
+    <br />
+    <div class="input-control text full-size" :class="{'error': registerForm.errors.has('email')}" data-role="input">
+        <label for="email">Email Address:</label>
+        <input type="text" name="email" id="email" v-model="registerForm.email">
+        <button class="button helper-button clear"><span class="mif-cross"></span></button>
+        <span class="fg-red" v-show="registerForm.errors.has('email')">
+                            @{{ registerForm.errors.get('email') }}
+                            </span>
     </div>
-
-    <!-- Terms And Conditions -->
+    <br />
+    <br />
+    <br />
+    <div class="input-control password full-size" :class="{'error': registerForm.errors.has('password')}" data-role="input">
+        <label for="password">Password:</label>
+        <input type="password" name="password" id="user_password" v-model="registerForm.password">
+        <button class="button helper-button reveal"><span class="mif-looks"></span></button>
+        <span class="fg-red" v-show="registerForm.errors.has('password')">
+                            @{{ registerForm.errors.get('password') }}
+                            </span>
+    </div>
+    <br />
+    <br />
+    <br />
+    <div class="input-control password full-size" :class="{'error': registerForm.errors.has('password_confirmation')}" data-role="input">
+        <label for="password_confirmation">Retype Password:</label>
+        <input type="password" name="password_confirmation" id="password_confirmation" v-model="registerForm.password_confirmation">
+        <button class="button helper-button reveal"><span class="mif-looks"></span></button>
+        <span class="fg-red" v-show="registerForm.errors.has('password_confirmation')">
+                            @{{ registerForm.errors.get('password_confirmation') }}
+                            </span>
+    </div>
+    <br />
+    <br />
+    <br />
     <div v-if=" ! selectedPlan || selectedPlan.price == 0">
-        <div class="form-group" :class="{'has-error': registerForm.errors.has('terms')}">
-            <div class="col-md-6 col-md-offset-4">
-                <div class="checkbox">
-                    <label>
-                        <input type="checkbox" name="terms" v-model="registerForm.terms">
-                        I Accept The <a href="/terms" target="_blank">Terms Of Service</a>
-                    </label>
+        <div :class="{'error': registerForm.errors.has('terms')}">
+            <label class="input-control checkbox">
+                            <input type="checkbox" name="terms" v-model="registerForm.terms">
+                            <span class="check"></span>
+                            <span class="caption">I agree with <a href="/terms" target="_blank" class="text-dashed text-italic link" data-role="hint" data-hint="|Read terms and conditions">terms</a></span>
+				            </label>
 
-                    <span class="help-block" v-show="registerForm.errors.has('terms')">
-                        @{{ registerForm.errors.get('terms') }}
-                    </span>
-                </div>
-            </div>
         </div>
+        <p class="fg-red" v-show="registerForm.errors.has('terms')">
+            @{{ registerForm.errors.get('terms') }}
+        </p>
+    </div>
+    <br />
+    <br />
 
-        <div class="form-group">
-            <div class="col-md-6 col-md-offset-4">
-                <button class="btn btn-primary" @click.prevent="register" :disabled="registerForm.busy">
-                    <span v-if="registerForm.busy">
-                        <i class="fa fa-btn fa-spinner fa-spin"></i>Registering
-                    </span>
+    <div class="form-actions">
+        <button class="button bg-darkTeal fg-white" @click.prevent="register" :disabled="registerForm.busy">
+                                <span v-if="registerForm.busy">
+                                <i class="fa fa-btn fa-spinner fa-spin"></i>Registering
+                                </span>
 
-                    <span v-else>
-                        <i class="fa fa-btn fa-check-circle"></i>Register
-                    </span>
-                </button>
-            </div>
-        </div>
+                                <span v-else>
+                                <i class="fa fa-btn fa-check-circle"></i>Register
+                                </span>
+
+                            </button>
+
+    </div>
+    <div>
+        <p>Have an account?</p>
+        <a href='{{route('login')}}' class="link"><span class="fa fa-sign-in"></span> <u>Login here</u></a>
     </div>
 </form>
+<!-- End Login Form -->

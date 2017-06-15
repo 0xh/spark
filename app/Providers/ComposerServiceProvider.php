@@ -32,7 +32,7 @@ class ComposerServiceProvider extends ServiceProvider
     // Allow Notification in All View!
     private function composeLatestNotification()
     {
-        view()->composer('*', function($view)
+        view()->composer(['partials.navbar.user','layouts.header'], function($view)
         {
         $notification = new Notification();
         $notification = $notification->recent(auth()->user())->first();

@@ -14,7 +14,7 @@
 
     <!-- CSS -->
     <link href="/css/sweetalert.css" rel="stylesheet">
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/spark.css') }}" rel="stylesheet">
 
     <!-- Scripts -->
     @yield('scripts', '')
@@ -47,7 +47,7 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ mix('js/spark.js') }}"></script>
     <script src="/js/sweetalert.min.js"></script>
 </body>
 </html>

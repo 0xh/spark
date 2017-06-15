@@ -7,6 +7,7 @@
         </a>
 
         <ul class="app-bar-menu place-right">
+            
             <li class="no-phone">
                 <!--  when click we should make the notification as read -->
                 <a class="icon" href="{{ $notification->action_url }}" data-role="hint" data-hint="{{ $notification->action_text }}|{{ $notification->body }}"

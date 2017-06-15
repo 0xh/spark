@@ -5,5 +5,12 @@
   "/css/all.css": "/css/all.css",
   "/js/all.js": "/js/all.js",
   "/css/main.css": "/css/main.css",
-  "/js/main.js": "/js/main.js"
+  "/js/main.js": "/js/main.js",
+  "/resources/assets/build/js/build/app.js": "/resources/assets/build/js/build/app.js",
+  "/resources/assets/build/css/app.css": "/resources/assets/build/css/app.css",
+  "/resources/assets/build/js/app.js": "/resources/assets/build/js/app.js",
+  "/css/metroui.css": "/css/metroui.css",
+  "/js/metroui.js": "/js/metroui.js",
+  "/js/spark.js": "/js/spark.js",
+  "/css/spark.css": "/css/spark.css"
 }

@@ -96,7 +96,7 @@
                     </div>
                 @endif
             </div>
-            <!-- This Contains All Your View In Settings -->
+
             <!-- Tab Panels -->
             <div class="col-md-8">
                 <div class="tab-content">

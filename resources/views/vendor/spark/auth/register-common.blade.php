@@ -1,6 +1,6 @@
 <!-- Coupon -->
 <div class="row" v-if="coupon">
-    <div class="col-md-8 col-md-offset-2">
+    <div class="row">
         <div class="panel panel-success">
             <div class="panel-heading">Discount</div>
 

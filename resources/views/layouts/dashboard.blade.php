@@ -15,40 +15,56 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
     <!-- Styles -->
-    <!-- This is the Compiled CSS of Spark -->
-    <!--<link href="{{ asset('css/app.css') }}" rel="stylesheet">-->
+    <!-- This is the Compiled CSS of Spark and Metro Ui -->
+    <link href="{{ mix('css/metroui.css') }}" rel="stylesheet">
+    <link href="/css/sweetalert.css" rel="stylesheet">
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+    <!--<link href="{{ mix('css/app.css') }}" rel="stylesheet">-->
     <!-- This is the Compiled CSS of Metro Ui -->
-    <link href="{{ asset('css/main.css') }}" rel="stylesheet" type="text/css" />
      <!-- Inject Critical CSS -->
      @stack('critical_css')
+    <!-- Add Globals For Laravel and Spark -->
+     @include('partials.globals')
     <!-- Inject Header JS -->
      @stack('header_js')
-    <!-- Add Globals For Laravel and Spark -->
-    @include('partials.globals')
+    
 </head>
 
 <!-- Body Contents -->
-<body>
-        <!-- Top NavBar -->
+<body class="with-navbar" style="background: #f0f0f2 url(./images/lock/landscape/86a053d7e8fd3c8efeb13ddf1057cc3a31cad70b6724793854ddbc9b8bea0c6a.jpg)
+center center no-repeat;">
+    <div id="spark-app" v-cloak>
+        <!-- Top NavBar & SideBar? -->
         @if (Auth::check())
         @include('partials.navbar.user') 
-        @include('partials.sidebar')
+        <!--@include('partials.sidebar')-->
         @else
         @include('partials.navbar.guest') 
         @endif
+
         <div class="page-container op-black">
-            <div class="" style="height:100%;">
+            <div class="container" style="height:100%;">
             @yield('content')
+            <!-- Application Level Modals -->
+            @if (Auth::check()) 
+                @include('spark::modals.notifications') 
+                @include('spark::modals.support') 
+                @include('spark::modals.session-expired')
+            @endif
             </div>
         </div>
+    </div>
     @include( 'partials.footer')
-    <!-- Scripts -->
-    <!--<script src="{{ asset('js/app.js') }}"></script>-->
-    <!-- All Javascript Dependencies of Metro Ui -->
-    <script src="{{ asset('js/main.js') }}"></script>
-     @stack('footer_js')
+    @stack('footer_js')
+    <!-- Combined Scripts Spark and Metro Ui -->
+    <script src="{{ mix('js/app.js') }}"></script>
+    <script src="{{ mix('js/metroui.js') }}"></script>
+    <script src="/js/sweetalert.min.js"></script>
 </body>
 
 </html>

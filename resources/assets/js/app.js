@@ -14,7 +14,13 @@
  |
  */
 
-require('spark-bootstrap');
+// This Will Add All Global Window Object
+// We Override the spark-bootstrap default
+// Remove Styling of Bootstrap Sass
+// This is for the spark.js
+// require('spark-bootstrap');
+// This is for the app.js
+require('./spark-bootstrap');
 
 require('./components/bootstrap');
 
